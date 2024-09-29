@@ -1,0 +1,17 @@
+﻿- **Title** : "Video Games books"  
+- **Author** : Adam Jeremy Capps  
+- **Description**  
+  > 3 ebooks ("All New Video Game Ideas", "Making A Great Video Game" and "The New Game Makers Bible + The New Video Game Idea Book") for making video games.  
+- **License** : PUBLIC DOMAIN  
+  > "All the books I write are in the public domain."  
+- **WARNING** :  
+  > MANY company names and videos games titles are mentionned, in these books. 
+  > As well, some elements of video games (story, gameplay...) are explained. 
+  > Be VERY careful about these : it can **cause copyright infringement**.  
+- **SOURCE** : founded on archive.org  
+- **Main files** :  
+- **For** : @MechatronicBeing  
+- **Modifications** : 
+  - Formatted for Markdown. 
+  - Italic style, in the raw text, is not fully formatted to Markdown.
+  - the large ebook "The New Game Makers Bible + The New Video Game Idea Book" was seperated in 2 books (for size).
