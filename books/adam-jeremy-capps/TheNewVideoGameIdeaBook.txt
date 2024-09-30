@@ -122,14 +122,14 @@ Making games in a nonlinear way is okay, even preferable: You don't have to go f
 Compare games to each other. Like one old fighting game to the next that took its place in popularity. It's never one that was just a pure rip- off clone. They did it "differently better." Look into the insides of games to see what you find. What is good about them or not will reveal a lot of good information for you. You can be inspired without outright copying a game. If you have a real desire to do whatever was done before but better and in your own way then that will lead to something new and good. If however you just want a quick buck- you'll get it, but you won't be remembered for it.  
 Resources for making games are larger than they've ever been and are sure to just become both more and better. No code is needed to know. There are many put-together softwares out there. There are things like pixel drawers and notation software too. Things like packaging is available- stickers, boxes, and mass copies of the physical games in some formats. The more you use these resources the more familiar and better at them you become. They might seem tricky at first but just continue using them because you will just get better and better at it.  
 Here is an overview of your options, of which there are many:  
-* Hacking a game- There is software that allows you to change very sprites and other aspects of a game and those that use them have made new renditions entirely. One popular use of them has been to make the game more difficult but it is not limited to that.  
-* Using small computers- There are some rather small computers on which to place ROMS and emulators, or new software altogether. They can contain a substantial amount of data anymore . They can be adjusted to use whatever controller you want them to. Best of all, they are cheap enough.  
-* Using a game making software- They require a little bit of a learning curve for the more difficult objectives you may have. Some are easier than others. Some are more robust than others. Some are free, others aren't. Some are more tailored to what you want to make, such as a text adventure or an RPG.  
-* Using actual code- I took a fairly good effort into learning Python. I learned it was the most popular type of code. I studied it a tad at college. If you want to learn things like how to generate things on a screen, adding music files to things, making a GUI (Graphic User Interface, and things like randomly generating a thing like a dice roll, the whole thing can be an incredibly fun thing to use if you learn how.  
-* Using 3D printers- I love the things. They kind of came out of nowhere and are now a popular item to buy. They have gotten much cheaper quickly. I even saw a positive review on one under $70. They could be used to make carts, housing for the system, they could be used to add tokens or little figures to include with the physical release of your game. Figures may be too time consuming while other things not so much.  
-* Putting emulators to use- There is the whole system right there. That surely saves a lot of time. Emulators can pull off games greater than the ones they were intended for, too. There are less limitations in using them over actual hardware.  
-* Creating from an old system- I could have once been said that these old systems and system files themselves were abandoned. Because of the internet that changed. It is like records and cassette players going on sale again. Or you could say the way we returned to 2D after a brief period where game makers were intensively focused on 3D. You can get what floppy disks you want, disks, making from whatever system and game in whatever form. It is no longer true at all that any given thing has simply been gone and abandoned.  
-* Using online resources- It will teach you of an incredible amount of opportunities before you.  
+- Hacking a game- There is software that allows you to change very sprites and other aspects of a game and those that use them have made new renditions entirely. One popular use of them has been to make the game more difficult but it is not limited to that.  
+- Using small computers- There are some rather small computers on which to place ROMS and emulators, or new software altogether. They can contain a substantial amount of data anymore . They can be adjusted to use whatever controller you want them to. Best of all, they are cheap enough.  
+- Using a game making software- They require a little bit of a learning curve for the more difficult objectives you may have. Some are easier than others. Some are more robust than others. Some are free, others aren't. Some are more tailored to what you want to make, such as a text adventure or an RPG.  
+- Using actual code- I took a fairly good effort into learning Python. I learned it was the most popular type of code. I studied it a tad at college. If you want to learn things like how to generate things on a screen, adding music files to things, making a GUI (Graphic User Interface, and things like randomly generating a thing like a dice roll, the whole thing can be an incredibly fun thing to use if you learn how.  
+- Using 3D printers- I love the things. They kind of came out of nowhere and are now a popular item to buy. They have gotten much cheaper quickly. I even saw a positive review on one under $70. They could be used to make carts, housing for the system, they could be used to add tokens or little figures to include with the physical release of your game. Figures may be too time consuming while other things not so much.  
+- Putting emulators to use- There is the whole system right there. That surely saves a lot of time. Emulators can pull off games greater than the ones they were intended for, too. There are less limitations in using them over actual hardware.  
+- Creating from an old system- I could have once been said that these old systems and system files themselves were abandoned. Because of the internet that changed. It is like records and cassette players going on sale again. Or you could say the way we returned to 2D after a brief period where game makers were intensively focused on 3D. You can get what floppy disks you want, disks, making from whatever system and game in whatever form. It is no longer true at all that any given thing has simply been gone and abandoned.  
+- Using online resources- It will teach you of an incredible amount of opportunities before you.  
   
 Some games are just copies and they appear as ugly siblings to the gamer. It's always been true that as soon as a great new game comes out everyone else wants in. For every 1 original game there must be at least 5 that imitated it. A good game makes the same thing different enough to stand on its own. For example Mortal Kombat compared to its inspiration: Street Fighter 2. And did you know that Ninja Gaiden was inspired by Castlevania?  
 
@@ -240,16 +240,16 @@ How to add more leisurely things in your game:
 
 Some games over text the gamer with forced pauses and such to read them. Give it as much as can be assimilated and no more. Wind Waker and its compulsive sailing may have sounded nifty to the programmers but really no gamer wants to have to walk places or sail places for long periods. Ghosts and Goblins expected you to replay the whole game again in order to officially beat it- with no difference. Some games have you beat the same bosses all over again without any differences to their reappearance. Another drawn out thing is when you are fully able to beat a boss except it takes twenty minutes or longer. They keep you at the threshold of about-to-die but you are fully able to survive. So you focus most of your time on healing yourself with a little bit of here and there attacking.  
 When things are too much the same...  
-* The character is the same just with different colors. This used to be a space saving tactic but now that game space is abundant it is no longer necessary.  
-* The main weapon makes the sub weapons useless. To have a charge blast or a highly versatile whip makes the others pointless to get and use. This just depletes variety.  
-* The fetch quest is too drawn out. You think you are about to get something but no, there is a whole other course to go on while that main item remains elusive.  
-* Grinding in one area to get money from it. There is one area in the game where it is easiest to get money. In order to have the things you need you are always returning to it in order to get the money it has.  
-* Too few enemies in random battles. These can bring a lot of boredom quickly. At first it is nice to see a new set of enemies but that quickly fades and repetition wears thin. If there aren't going to be many from place to place then each should have certain elements to them that keep them fresh, versatile, like a rare drop for the thief to grab.  
-* Reused assets- like in a beat 'em up the same enemies reappear with only minor differences.  
-* Not enough variety or differences- Whenever the gamer gets the feeling that one place is just basically the same as another they may wonder what the whole point was in getting there. Good game makers know to open a little bit up at a time. That is simply accomplished too. Just with a tool, a way to travel, or an ability to gain depending on the genre. That way differences can stand out. Once you are there however, and nothing is different than before, then the effect of the new and fresh is lost. As a rule of thumb if something is good to start with then "one good turn deserves another." Having it all at once is bad. Opening up new abilities and other things gradually is good. It's very nice to suddenly have a character that can use a bow and arrow or maybe a ninja with throwing stars. Best of all are the times you learn a new spell. Having it dropped on you from nowhere, maybe gotten at a specific level, comes as a nice surprise.  
-* An area takes too long to get through. Such as a never ending dungeon. Often in games more is not better. It could take a long time to get from one place to another, which is boring. The game may have the player running around too much. It might take you longer to get to a new place than you want to.  
-* There are not enough continues or save points, if any. Naturally a gamer is going to have to repeat the same levels over and over again if this is so. Auto saving is a thing that should be in points where the gamer cannot save themselves or in spots they may forget to.  
-* Getting stuck in an area- Like because it is confusing or because you don't know where to go next or how to get there. There is a funny story I have about this. I was playing Final Fantasy 8 when I got stuck on a part so bad that I had to look up information about it in a time before the internet. My only option was to go to the mall and look at where I needed to go in a strategy guide. I didn't even have any money. So I went to the mall and looked through the guide. I found that one little trivial thing got me stuck. There was a machine that I was supposed to put my ID into. I had been through that room up and down dozens of times and the reason I got stuck was over a stupid ID?  
+- The character is the same just with different colors. This used to be a space saving tactic but now that game space is abundant it is no longer necessary.  
+- The main weapon makes the sub weapons useless. To have a charge blast or a highly versatile whip makes the others pointless to get and use. This just depletes variety.  
+- The fetch quest is too drawn out. You think you are about to get something but no, there is a whole other course to go on while that main item remains elusive.  
+- Grinding in one area to get money from it. There is one area in the game where it is easiest to get money. In order to have the things you need you are always returning to it in order to get the money it has.  
+- Too few enemies in random battles. These can bring a lot of boredom quickly. At first it is nice to see a new set of enemies but that quickly fades and repetition wears thin. If there aren't going to be many from place to place then each should have certain elements to them that keep them fresh, versatile, like a rare drop for the thief to grab.  
+- Reused assets- like in a beat 'em up the same enemies reappear with only minor differences.  
+- Not enough variety or differences- Whenever the gamer gets the feeling that one place is just basically the same as another they may wonder what the whole point was in getting there. Good game makers know to open a little bit up at a time. That is simply accomplished too. Just with a tool, a way to travel, or an ability to gain depending on the genre. That way differences can stand out. Once you are there however, and nothing is different than before, then the effect of the new and fresh is lost. As a rule of thumb if something is good to start with then "one good turn deserves another." Having it all at once is bad. Opening up new abilities and other things gradually is good. It's very nice to suddenly have a character that can use a bow and arrow or maybe a ninja with throwing stars. Best of all are the times you learn a new spell. Having it dropped on you from nowhere, maybe gotten at a specific level, comes as a nice surprise.  
+- An area takes too long to get through. Such as a never ending dungeon. Often in games more is not better. It could take a long time to get from one place to another, which is boring. The game may have the player running around too much. It might take you longer to get to a new place than you want to.  
+- There are not enough continues or save points, if any. Naturally a gamer is going to have to repeat the same levels over and over again if this is so. Auto saving is a thing that should be in points where the gamer cannot save themselves or in spots they may forget to.  
+- Getting stuck in an area- Like because it is confusing or because you don't know where to go next or how to get there. There is a funny story I have about this. I was playing Final Fantasy 8 when I got stuck on a part so bad that I had to look up information about it in a time before the internet. My only option was to go to the mall and look at where I needed to go in a strategy guide. I didn't even have any money. So I went to the mall and looked through the guide. I found that one little trivial thing got me stuck. There was a machine that I was supposed to put my ID into. I had been through that room up and down dozens of times and the reason I got stuck was over a stupid ID?  
 
 Don't be too unfair. Too unfair would be like forcing the gamer to take a hit, and couldn't prevent it. Enemies that respawn, pixel perfect strikes, being thrown backward when hit, and one hit deaths are some unfair things. Some games expect you to get something you had no idea you needed in order to defeat a boss. Some expect you to solve puzzles that aren't really puzzles- holding down in Castlevania 2 in a certain area, for example, to go any further. Some puzzles are ridiculously impossible to figure out. Like going around something three times then dashing into it. Where healing items are placed can adjust the difficulty to your desired range.  
 Ways that games are unfair:  
@@ -260,13 +260,13 @@ One game that has you re-routing yourself in different areas does well by making
 
 Don't be discouraged if your game doesn't immediately reach a desirable amount of success. There is a lot of competition. But there are many looking for hidden gems in the retro going community. My advice is to advertise it wherever you can. Get input from others. Maybe a sequel will do much better. Maybe your luck just isn't going well. Maybe it just needs better box art or be brought to greater attention. Just because your game doesn't do well doesn't mean that you made a bad game. There could be a number of other reasons for it. There is no such thing as "a game for all people" or "a people for all games." Sometimes things go pretty well. They could even be among the best games of the year. Then there is frogger over pac man. I'm the creator of Frogger (Akira Hashimoto) knew it would do well. There was no pure knowing though how exactly popular it would be or if it would sell the most among its contemporaries. Sometimes you have to accept second best. It can be compared to gold, silver, and bronze metals however. Some have the most gold but the fewest hits overall. Some have several times more silver than another but not one golden hit. So in considering your impact on the market consider your accomplishments overall and keep in mind that some things are just not destined to be. It's comparable to a really good painting to an abstract mess. The majority like and praise the abstract painting more than the person who poured his heart and soul into his own- not to mention the years of study it took to get him there. Then photographs came out and no matter how realistic a painted portrait of someone was they were too outdated to bother with. Likewise the future has the better say in how things will turn out.  
 Here are some factors to consider as to if your game will succeed or not:  
-* The price is right. It is not too expensive but not too cheap either.  
-* The bugs have been worked out. There are no problems with the end product which could cause a lot of complaints.  
-* It is praiseworthy. It has an appreciated style. Style like the controversy Mortal Kombat once garnered or is the talk of the town in whatever way.  
-* It has a lot of publicity behind it. The trailer is good. The advertisements for it are good of which there are many.  
-* It is what people want. It is just a new game that people will really like.  
-* It is a great new idea. Something new that hasn't been done before. It stands out in a good way.  
-* It has been worked hard on, is well polished, and a good product in the end. All of the elements of a good game are there due to a lot of effort in making it as good as possible.  
+- The price is right. It is not too expensive but not too cheap either.  
+- The bugs have been worked out. There are no problems with the end product which could cause a lot of complaints.  
+- It is praiseworthy. It has an appreciated style. Style like the controversy Mortal Kombat once garnered or is the talk of the town in whatever way.  
+- It has a lot of publicity behind it. The trailer is good. The advertisements for it are good of which there are many.  
+- It is what people want. It is just a new game that people will really like.  
+- It is a great new idea. Something new that hasn't been done before. It stands out in a good way.  
+- It has been worked hard on, is well polished, and a good product in the end. All of the elements of a good game are there due to a lot of effort in making it as good as possible.  
 
 Be cohesive. I'm sure there are a lot of things that people like to eat but to put it together in a soup could taste awful. Or you could relate this to a person whose clothes match up terribly though individually they are good shirts and shoes and stuff. Just like you mix a good drink, bring together a good game based on ingredients that suit each other. If this is true in any way then make a game of good taste.  
 
@@ -1051,20 +1051,20 @@ One game has you knowing just where you are going. Others surprise you with the 
 There is a lot to be said about the relationships between characters. There is the one that is saved and comes to be protected. There are those that betrayed you. There are those related. Those you didn't know were until later. There is the protector. There is the one that has something you need. There is the one that had a talent or flying ship you needed or certain access. There are those looking for revenge. Those that became martyrs. Those that become romantically involved. There are those who turned out to be half mythic creatures or able to summon and other various things.  
 
 And these are just ideas to consider being a part of your game and their different incarnations:  
-* A ceremony.. of a marriage, of a new ruler, of a sacred date.  
-* A celebration.. on a sacred day, a birthday, a victory.  
-* A "mythical" being.. whose power is robbed, sought out, or that's changed things.  
-* An ominous presence.. that's supernatural, that can't be understood.  
-* A legend.. of a person, of a creature, of a Kingdom, of a sword.  
-* A lost love.. and where they went.  
-* That treasure.. of legend, of great value, that's worth finding.  
-* Orders given.. To slay, to find, to leave, to fix, to obtain.  
-* A visit.. from a dragon, from a person, from a ghost, from a friend, from a King.  
-* A Homeland.. overtaken, pillaged, a threat, destroyed.  
-* A choice.. to rebel, to defy, to refuse, or to accept.  
-* A decision.. that's hard to come by, or handed down from the wise.  
-* Trying to find.. a powerful item, a lost friend, help.  
-* An adventure.. because things are too mundane, ordinary, or following after a legend, to find treasure, or as imposed on a person coming of age.  
+- A ceremony.. of a marriage, of a new ruler, of a sacred date.  
+- A celebration.. on a sacred day, a birthday, a victory.  
+- A "mythical" being.. whose power is robbed, sought out, or that's changed things.  
+- An ominous presence.. that's supernatural, that can't be understood.  
+- A legend.. of a person, of a creature, of a Kingdom, of a sword.  
+- A lost love.. and where they went.  
+- That treasure.. of legend, of great value, that's worth finding.  
+- Orders given.. To slay, to find, to leave, to fix, to obtain.  
+- A visit.. from a dragon, from a person, from a ghost, from a friend, from a King.  
+- A Homeland.. overtaken, pillaged, a threat, destroyed.  
+- A choice.. to rebel, to defy, to refuse, or to accept.  
+- A decision.. that's hard to come by, or handed down from the wise.  
+- Trying to find.. a powerful item, a lost friend, help.  
+- An adventure.. because things are too mundane, ordinary, or following after a legend, to find treasure, or as imposed on a person coming of age.  
 
 And for these anything you can add to them.  
 
@@ -1133,45 +1133,45 @@ All of this should be substantial advice toward making a great adventure game.
 (An Interlude)  
 Original Ideas  
 
-* You can buy a tent that once you place it stays there. "Camping areas" where you can rest and recharge.  
-* Different coins buy different things. Some are used for one type of thing but not another.  
-* When you defend anyone they can be called on at any time to help. Or you can build a rank of people to help you who aren't much playable characters.  
-* Sneaking into an army to spy. Or into some sort of area to do so.  
-* Satellite images to peer down into a town or other area.  
-* Characters that offer you a price to sell what is in your possession.  
-* Merchants that build what you request them to from a very long list. The ability to have far more items, ones more unique and particular.  
-* Enemy sprites can take your power up and use it against you if you don't get to it in time. Or according to many there you have to choose what will be your power and theirs.  
-* If you don't find hidden weapons in a level then the opponents in the next level will be using them.  
-* In one level you collect things, kind of naturally, and in the next level a merchant asks what you have for them, and with what they take you've made money or a trade.  
-* You can limit your enemies' resources. You can reduce them to a point.  
-* You can call it a platform strategy game when you go around acquiring more assistance or change the nature of one area in various ways. For example hanging "the eternal lamp" in dark areas. Or collapse a bridge. Or seal a door. Find the keys and bring them to a single character who will send others out to lock those doors.  
-* You could say collecting certain things to bring certain things together. To obstruct your enemies and corner them.  
-* Gives the player choices of how the next level or area will be. Like by checking off a list of things. For example, the level to be very easy or difficult. If you choose the latter you'll be better regarded. Tell the game you are faster money or what weapon will be contained somewhere, and then play the next level in a more customized way.  
-* To find a cure for the king. To regain his stolen ancestral crown. To be sent to bring him a ring or do him honor. To perform an act of honor and prove yourself a worthy knight. Or these for a queen, of course.  
-* One puzzle can be of a looping effect that you can't pass through without the right combinations of actions.  
-* What special items you get determine where you go next. The harder they are found the better the next place will be. By collecting four of a kind that opens its own passage. To open all four doors, or whatever you get first you must then get the other three of and the other ones are then disqualified.  
-* As an angel get your wings. Serpentine wings if you like. Those that you greet the most and help the most you may become. For example if you help a knight then you become one. Or differently if you help a dragon then you can become one. Or if you help a particular species then they will be at your disposal, one and all. Be it a dragon, an elf, a bear or wolf, or the dwarves.  
-* "Visions" come up suddenly depending on where you are or what you are doing. Just like a nice cut scene that is cleverly put together. They tell you what to do for a reward. And you'll either follow after it or not. And it may bring the story together in an abstract way. One full of parables and metaphors and the like.  
-* Having a wishing well and making wishes. Having a temple to pray for help. Be it a white or black temple. Memorizing words of spells like a paragraph long. Being given the right combination of action to complete a spell. Randomizing these to prevent cheating.  
-* A magic casting calculator that is possible if casting numerous different spells as things are punched in. Not so much numbers though numbers can be used, too. One that includes things like elements and shows possible weapons on your person that can be implemented. And maybe all new spells can be produced and added into you.  
-* At night time astrological signs—in the stars and their order, brightness and color, using the moon or moons to be told how to proceed or how things are at the moment. If a kingdom/ person is in trouble then a star may have gone dark. And maybe following a good star can make you wealthy.  
-* Color stones or numbers that come up when certain things are around. They give you an idea of what to look for if you are near them or just if you are in any large place where they can be found. Will indicate if someone is in the town or not. If they are in the right place. Or just objectives, what you should come up with or places that have things you are lacking.  
-* A point and click adventure game can be like in a loop that has only one ending. You don't die. You just have to determine the right order of doing things.  
-* There can be the power to glance at an area. A limited one, maybe up to 5 seconds. It'll let you be more prepared, for one. Or maybe to better know where you should go. This power can come from different methods—an item or service you buy, or just available one game world day at a time. I think a good way to have this is as a crystal ball.  
+- You can buy a tent that once you place it stays there. "Camping areas" where you can rest and recharge.  
+- Different coins buy different things. Some are used for one type of thing but not another.  
+- When you defend anyone they can be called on at any time to help. Or you can build a rank of people to help you who aren't much playable characters.  
+- Sneaking into an army to spy. Or into some sort of area to do so.  
+- Satellite images to peer down into a town or other area.  
+- Characters that offer you a price to sell what is in your possession.  
+- Merchants that build what you request them to from a very long list. The ability to have far more items, ones more unique and particular.  
+- Enemy sprites can take your power up and use it against you if you don't get to it in time. Or according to many there you have to choose what will be your power and theirs.  
+- If you don't find hidden weapons in a level then the opponents in the next level will be using them.  
+- In one level you collect things, kind of naturally, and in the next level a merchant asks what you have for them, and with what they take you've made money or a trade.  
+- You can limit your enemies' resources. You can reduce them to a point.  
+- You can call it a platform strategy game when you go around acquiring more assistance or change the nature of one area in various ways. For example hanging "the eternal lamp" in dark areas. Or collapse a bridge. Or seal a door. Find the keys and bring them to a single character who will send others out to lock those doors.  
+- You could say collecting certain things to bring certain things together. To obstruct your enemies and corner them.  
+- Gives the player choices of how the next level or area will be. Like by checking off a list of things. For example, the level to be very easy or difficult. If you choose the latter you'll be better regarded. Tell the game you are faster money or what weapon will be contained somewhere, and then play the next level in a more customized way.  
+- To find a cure for the king. To regain his stolen ancestral crown. To be sent to bring him a ring or do him honor. To perform an act of honor and prove yourself a worthy knight. Or these for a queen, of course.  
+- One puzzle can be of a looping effect that you can't pass through without the right combinations of actions.  
+- What special items you get determine where you go next. The harder they are found the better the next place will be. By collecting four of a kind that opens its own passage. To open all four doors, or whatever you get first you must then get the other three of and the other ones are then disqualified.  
+- As an angel get your wings. Serpentine wings if you like. Those that you greet the most and help the most you may become. For example if you help a knight then you become one. Or differently if you help a dragon then you can become one. Or if you help a particular species then they will be at your disposal, one and all. Be it a dragon, an elf, a bear or wolf, or the dwarves.  
+- "Visions" come up suddenly depending on where you are or what you are doing. Just like a nice cut scene that is cleverly put together. They tell you what to do for a reward. And you'll either follow after it or not. And it may bring the story together in an abstract way. One full of parables and metaphors and the like.  
+- Having a wishing well and making wishes. Having a temple to pray for help. Be it a white or black temple. Memorizing words of spells like a paragraph long. Being given the right combination of action to complete a spell. Randomizing these to prevent cheating.  
+- A magic casting calculator that is possible if casting numerous different spells as things are punched in. Not so much numbers though numbers can be used, too. One that includes things like elements and shows possible weapons on your person that can be implemented. And maybe all new spells can be produced and added into you.  
+- At night time astrological signs—in the stars and their order, brightness and color, using the moon or moons to be told how to proceed or how things are at the moment. If a kingdom/ person is in trouble then a star may have gone dark. And maybe following a good star can make you wealthy.  
+- Color stones or numbers that come up when certain things are around. They give you an idea of what to look for if you are near them or just if you are in any large place where they can be found. Will indicate if someone is in the town or not. If they are in the right place. Or just objectives, what you should come up with or places that have things you are lacking.  
+- A point and click adventure game can be like in a loop that has only one ending. You don't die. You just have to determine the right order of doing things.  
+- There can be the power to glance at an area. A limited one, maybe up to 5 seconds. It'll let you be more prepared, for one. Or maybe to better know where you should go. This power can come from different methods—an item or service you buy, or just available one game world day at a time. I think a good way to have this is as a crystal ball.  
 And can be used in more ways than that. You can ask to see where a great sword is or a piece of something you need, at lesser and greater prices.  
-* You could adjust the power and appearance of an end level boss just by the course of actions you take. Certain potions can morph them into a weaker enemy. Can de-evolve them. Or that can be prevented. Maybe they've found an item you should have gotten first. Or a wizard wasn't stopped. Or enough of the boss's minions. Maybe you've obstructed their progress during the game and things such as that.  
-* Having "The Underground" in the game (those whose secrets must be hidden) the player must try not to run across. Must try to stay out of their way. Night time monsters don't have to literally be them. Not zombies or vampires but people and dangerous groups. Or maybe you can be one of them doing everything you can to not get caught. Maybe the King just has a terrible curfew.  
-* At the top of The Mountain of Storms you raise your sword, lightning strikes it, and is given greater power.  
-* Spells go where the wind goes, as when an area is windy screens across from each other carry the spell more broadly.  
-* The Special Sun raises the defensive power of "reflective armor."  
-* Collect The Crystal Eyes placing them into six slots. They are taken from the regular game world onto an outer planet.  
-* Collect The Magical Sands for The Magical Hourglass (s.)  
-* Magical threads of a magical tapestry.  
-* Being pursued, on the run. Chased down. Going into hiding. Evading those after you. Finding the right way around things and such.  
-* Reflecting the sun as a power, given to a shield or sword. Using the sun to charge them.  
-* Being given a throne as an endeavor. Fighting to be rewarded for one. That being the quest. Or a great palace as a reward.  
-* The reaper is always behind you. Following you. And you must defy him, trick him, and outdo him. If you succeed then immortality awaits you at the end of the game.  
-* Buying in-game a subscription of items. Things that are automatically added, reoccurring.  
+- You could adjust the power and appearance of an end level boss just by the course of actions you take. Certain potions can morph them into a weaker enemy. Can de-evolve them. Or that can be prevented. Maybe they've found an item you should have gotten first. Or a wizard wasn't stopped. Or enough of the boss's minions. Maybe you've obstructed their progress during the game and things such as that.  
+- Having "The Underground" in the game (those whose secrets must be hidden) the player must try not to run across. Must try to stay out of their way. Night time monsters don't have to literally be them. Not zombies or vampires but people and dangerous groups. Or maybe you can be one of them doing everything you can to not get caught. Maybe the King just has a terrible curfew.  
+- At the top of The Mountain of Storms you raise your sword, lightning strikes it, and is given greater power.  
+- Spells go where the wind goes, as when an area is windy screens across from each other carry the spell more broadly.  
+- The Special Sun raises the defensive power of "reflective armor."  
+- Collect The Crystal Eyes placing them into six slots. They are taken from the regular game world onto an outer planet.  
+- Collect The Magical Sands for The Magical Hourglass (s.)  
+- Magical threads of a magical tapestry.  
+- Being pursued, on the run. Chased down. Going into hiding. Evading those after you. Finding the right way around things and such.  
+- Reflecting the sun as a power, given to a shield or sword. Using the sun to charge them.  
+- Being given a throne as an endeavor. Fighting to be rewarded for one. That being the quest. Or a great palace as a reward.  
+- The reaper is always behind you. Following you. And you must defy him, trick him, and outdo him. If you succeed then immortality awaits you at the end of the game.  
+- Buying in-game a subscription of items. Things that are automatically added, reoccurring.  
   
 
 ### About Simulation Games  
@@ -1320,26 +1320,26 @@ The different ways to produce a game are abundant. Many of the older styles were
 There are game making software to produce a game for many of the most favorite systems. You tell what you want certain things to do and where they will be for most part, even programming things in such as chance. To put text up where you want it and menus, and all else.  
 Then they can be put into a cart, programmed into a CD, a floppy drive, or just kept digital.  
 Here is a list of questions you might like to ask yourself:  
-* Is the game entertaining enough?  
-* Is it understandable enough?  
-* Are the controls and menus easy to use?  
-* Are the weapons and items fun to use?  
-* Are the graphics appealing?  
-* Are the enemies of a good design?  
-* Is the player rewarded?  
-* Is the music very good?  
-* Is the game not too simple and plain?  
-* Is it rich in content?  
-* Does it lend to exploration?  
-* Is it well connected? That is, are the pieces and components of it put well together?  
-* Can anything be made just a little better?  
-* Is what you have in it working, or should you cut it out?  
-* Is the story a good and compelling one?  
-* Does it evoke emotion the right way?  
-* Are some areas just too frustrating to include?  
-* Is any one thing in it able to be improved?  
-* Are too many things thrown into one place where in others they are inadequate?  
-* Is it fun? Is it involving?  
+- Is the game entertaining enough?  
+- Is it understandable enough?  
+- Are the controls and menus easy to use?  
+- Are the weapons and items fun to use?  
+- Are the graphics appealing?  
+- Are the enemies of a good design?  
+- Is the player rewarded?  
+- Is the music very good?  
+- Is the game not too simple and plain?  
+- Is it rich in content?  
+- Does it lend to exploration?  
+- Is it well connected? That is, are the pieces and components of it put well together?  
+- Can anything be made just a little better?  
+- Is what you have in it working, or should you cut it out?  
+- Is the story a good and compelling one?  
+- Does it evoke emotion the right way?  
+- Are some areas just too frustrating to include?  
+- Is any one thing in it able to be improved?  
+- Are too many things thrown into one place where in others they are inadequate?  
+- Is it fun? Is it involving?  
 
 It is like a good meal. The spices are just right. It doesn't burn a whole in your mouth. It isn't too hot or cold. It is served up just right and worth taking the time to enjoy.  
 
