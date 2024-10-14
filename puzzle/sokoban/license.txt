@@ -1,0 +1,2 @@
+XSokoban is distributed in the public domain and may be freely redistributed.
+This distribution contains the original 50 sokoban screen files, 40 additional screen files gleaned from various public domain versions of sokoban.
