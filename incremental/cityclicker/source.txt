@@ -1,0 +1,7 @@
+﻿Title: CityClicker
+Description: A Javascript incremental city building game.
+Author: johntoopublic
+Website: https://github.com/johntoopublic
+License: Unlicense license
+Source: https://github.com/johntoopublic/cityclicker
+Last-update: Oct 13, 2014

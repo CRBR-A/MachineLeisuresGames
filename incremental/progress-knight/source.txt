@@ -1,0 +1,8 @@
+﻿Title: Progress Knight
+Description: A text-based incremental game based in a fantasy/medieval setting
+Author: ihtasham42
+url: https://github.com/ihtasham42/
+License: Unlicense
+Source: https://github.com/ihtasham42/progress-knight
+Last-update: Jul 11, 2021
+note: hacktimer.js is MIT licensed and removed.
