@@ -361,10 +361,6 @@ function setTab(element, selectedTab) {
   document.getElementById(selectedTab).style.display = "block"
 
   var tabButtons = document.getElementsByClassName("tabButton")
-  for (tabButton of tabButtons) {
-    tabButton.classList.remove("w3-blue-gray")
-  }
-  element.classList.add("w3-blue-gray")
 }
 
 function setPause() {
