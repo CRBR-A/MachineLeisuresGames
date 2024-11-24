@@ -1,0 +1,88 @@
+.window.sound_ed content {
+  height: 256px;
+  min-width: 400px;
+}
+
+.window.sound_ed .wrapper {
+  height: calc(100% - 75px);
+  margin-top: 4px;
+  overflow: auto;
+}
+
+.window.sound_ed table {
+  width: 100%;
+}
+
+.window.sound_ed th {
+  font-family: 'Roboto Mono';
+}
+.window.sound_ed td {
+  min-width: 10px;
+  border: 1px hsl(201 24% 10% / 1) solid;
+  text-align: center;
+}
+.window.sound_ed td.active::before {
+  content: attr(volume);
+}
+.window.sound_ed tr {
+  height: 20px;
+}
+
+/* Playing indicator */
+
+.window.sound_ed td.playing {
+  background-color: hsla(198, 30%, 33%, 0.8);
+}
+
+/* Tone markers */
+
+.window.sound_ed tr:nth-last-child(12n + 2),
+.window.sound_ed tr:nth-last-child(12n + 4),
+.window.sound_ed tr:nth-last-child(12n + 7),
+.window.sound_ed tr:nth-last-child(12n + 9),
+.window.sound_ed tr:nth-last-child(12n + 11) {
+  background-color: hsla(200, 25%, 18%, 1);
+}
+
+/* Beat markers */
+
+.window.sound_ed td:nth-child(8n+2) {
+  border-left-width: 2px;
+}
+
+.window.sound_ed td:nth-child(8n+1) {
+  border-right-width: 2px;
+}
+
+/* Octave markers */
+
+.window.sound_ed tr:nth-last-child(12n) td {
+  border-top-color: black;
+}
+
+.window.sound_ed tr:nth-last-child(12n+1) td {
+  border-bottom-color: black;
+}
+
+/* Sound effects */
+
+.window.sound_ed td.active[effect=none] {
+  background-color: lightblue;
+  color: hsla(198, 14%, 10%, 1);
+  font-family:'IBM Plex Sans Condensed', sans-serif;
+}
+.window.sound_ed td.active[effect=slide] {
+  background-image: linear-gradient(#376176 lightblue, #376176);
+}
+.window.sound_ed td.active[effect=vibrato] {
+  background-image: linear-gradient(to right, lightblue, #376176, lightblue, #376176, lightblue, #376176, lightblue, #376176);
+}
+.window.sound_ed td.active[effect=drop] {
+  background-image: radial-gradient(lightblue, #00000000);
+}
+.window.sound_ed td.active[effect=fadein] {
+  background-image: linear-gradient(to right, #00000000, lightblue);
+}
+.window.sound_ed td.active[effect=fadeout] {
+  background-image: linear-gradient(to right, lightblue, #00000000);
+}

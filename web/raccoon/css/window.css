@@ -1,0 +1,49 @@
+.window {
+  position: absolute;
+  background-color: hsl(201deg 24% 14%);
+  border: 1px hsla(198, 20%, 20%, 1) solid;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.window header {
+  padding: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  background-color: hsl(199deg 26% 19%);
+  text-align: center;
+  cursor: move;
+}
+
+.window:focus header {
+  background-color: hsl(199deg 26% 29%);
+}
+
+.window header icon {
+  float: right;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.window header icon:hover {
+  opacity: 1;
+}
+
+.window header icon.close {
+  /* Move it up a bit because it's ugly otherwise */
+  position: relative;
+  bottom: 2px;
+}
+
+.window header icon.doc {
+  /* It's a single letter so it needs space around to be buttony */
+  padding: 0px 8px 0px 8px;
+}
+
+.window content {
+  min-height: 128px;
+  min-width: 128px;
+  display: block;
+  padding: 8px;
+  resize: both;
+  overflow: auto;
+}

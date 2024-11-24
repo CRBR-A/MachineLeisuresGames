@@ -1,0 +1,992 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="msapplication-tap-highlight" content="no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<title>Boo</title>
+<link rel="shortcut icon" href="icon.png"/>
+<link rel="apple-touch-icon-precomposed" href="icon.png"/>
+<style>
+
+html,
+body
+{
+	margin: 0; padding: 0;
+	background: #111;
+	overflow: hidden;
+	-ms-touch-action: none;
+}
+
+canvas
+{
+	position: fixed;
+	left: 0; top: 0;
+}
+
+</style>
+<head>
+<body>
+<script>
+
+"use strict";
+
+Math.TAU = Math.TAU || Math.PI*2;
+
+var requestAnimFrame =
+		window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		function( callback )
+		{
+			window.setTimeout( callback, 16 );
+		},
+	resources = {
+		0: { rect: {/*0*/x:244,y:37,w:3,h:6} },
+		1: { rect: {/*1*/x:228,y:20,w:2,h:6} },
+		2: { rect: {/*2*/x:244,y:31,w:3,h:6} },
+		3: { rect: {/*3*/x:244,y:24,w:3,h:6} },
+		4: { rect: {/*4*/x:244,y:18,w:3,h:6} },
+		5: { rect: {/*5*/x:244,y:12,w:3,h:6} },
+		6: { rect: {/*6*/x:244,y:6,w:3,h:6} },
+		7: { rect: {/*7*/x:244,y:0,w:3,h:6} },
+		8: { rect: {/*8*/x:241,y:37,w:3,h:6} },
+		9: { rect: {/*9*/x:241,y:31,w:3,h:6} },
+		a: { rect: {/*a*/x:241,y:24,w:3,h:6} },
+		b: { rect: {/*b*/x:241,y:18,w:3,h:6} },
+		c: { rect: {/*c*/x:241,y:12,w:3,h:6} },
+		d: { rect: {/*d*/x:241,y:6,w:3,h:6} },
+		e: { rect: {/*e*/x:241,y:0,w:3,h:6} },
+		f: { rect: {/*f*/x:238,y:37,w:3,h:6} },
+		g: { rect: {/*g*/x:238,y:31,w:3,h:6} },
+		h: { rect: {/*h*/x:238,y:24,w:3,h:6} },
+		i: { rect: {/*i*/x:238,y:18,w:3,h:6} },
+		j: { rect: {/*j*/x:228,y:14,w:2,h:6} },
+		k: { rect: {/*k*/x:238,y:12,w:3,h:6} },
+		l: { rect: {/*l*/x:238,y:6,w:3,h:6} },
+		m: { rect: {/*m*/x:230,y:12,w:5,h:6} },
+		n: { rect: {/*n*/x:234,y:31,w:4,h:6} },
+		o: { rect: {/*o*/x:238,y:0,w:3,h:6} },
+		p: { rect: {/*p*/x:234,y:37,w:3,h:6} },
+		q: { rect: {/*q*/x:230,y:24,w:4,h:6} },
+		r: { rect: {/*r*/x:235,y:18,w:3,h:6} },
+		s: { rect: {/*s*/x:235,y:12,w:3,h:6} },
+		t: { rect: {/*t*/x:235,y:6,w:3,h:6} },
+		u: { rect: {/*u*/x:235,y:0,w:3,h:6} },
+		v: { rect: {/*v*/x:230,y:6,w:5,h:6} },
+		w: { rect: {/*w*/x:230,y:0,w:5,h:6} },
+		x: { rect: {/*x*/x:229,y:37,w:5,h:6} },
+		y: { rect: {/*y*/x:229,y:31,w:5,h:6} },
+		z: { rect: {/*z*/x:230,y:18,w:4,h:6} },
+		".": { rect: {/*point*/x:234,y:28,w:1,h:2} },
+		":": { rect: {/*colon*/x:234,y:24,w:1,h:4} },
+		",": { rect: {/*comma*/x:228,y:26,w:1,h:3} },
+		"!": { rect: {/*exclamation*/x:234,y:18,w:1,h:6} },
+		"?": { rect: {/*question*/x:235,y:24,w:3,h:6} },
+		ground: { rect: {/*ground*/x:144,y:31,w:16,h:16} },
+		yardTopLeft: { rect: {/*yard-top-left*/x:32,y:31,w:16,h:16} },
+		yardTop: { rect: {/*yard-top*/x:0,y:30,w:16,h:16} },
+		yardTopRight: { rect: {/*yard-top-right*/x:16,y:31,w:16,h:16} },
+		yardLeft: { rect: {/*yard-left*/x:80,y:31,w:16,h:16} },
+		yardMiddle: { rect: {/*yard-middle*/x:64,y:31,w:16,h:16} },
+		yardRight: { rect: {/*yard-right*/x:48,y:31,w:16,h:16} },
+		yardBottomLeft: { rect: {/*yard-bottom-left*/x:128,y:31,w:16,h:16} },
+		yardBottom: { rect: {/*yard-bottom*/x:96,y:31,w:16,h:16} },
+		yardBottomRight: { rect: {/*yard-bottom-right*/x:112,y:31,w:16,h:16} },
+		grave0: { rect: {/*grave0*/x:31,y:0,w:15,h:31} },
+		grave1: { rect: {/*grave1*/x:94,y:0,w:16,h:29} },
+		grave2: { rect: {/*grave2*/x:0,y:0,w:16,h:30} },
+		grave3: { rect: {/*grave3*/x:173,y:0,w:15,h:28} },
+		grave4: { rect: {/*grave4*/x:142,y:0,w:15,h:29} },
+		grave5: { rect: {/*grave5*/x:157,y:0,w:16,h:27} },
+		grave6: { rect: {/*grave6*/x:62,y:0,w:16,h:29} },
+		grave7: { rect: {/*grave7*/x:126,y:0,w:16,h:28} },
+		grave8: { rect: {/*grave8*/x:46,y:0,w:16,h:29} },
+		grave9: { rect: {/*grave9*/x:110,y:0,w:16,h:28} },
+		grave10: { rect: {/*grave10*/x:16,y:0,w:15,h:31} },
+		grave11: { rect: {/*grave11*/x:78,y:0,w:16,h:29} },
+		ghost0: { rect: {/*ghost0*/x:160,y:31,w:12,h:16} },
+		ghost1: { rect: {/*ghost1*/x:196,y:31,w:10,h:16} },
+		ghost2: { rect: {/*ghost2*/x:206,y:31,w:9,h:16} },
+		ghost3: { rect: {/*ghost3*/x:188,y:15,w:11,h:16} },
+		ghost4: { rect: {/*ghost2*/x:206,y:31,w:9,h:16} },
+		ghost5: { rect: {/*ghost1*/x:196,y:31,w:10,h:16} },
+		priestCrow0: { rect: {/*priest-crow0*/x:188,y:0,w:12,h:15} },
+		priestCrow1: { rect: {/*priest-crow1*/x:184,y:31,w:12,h:15} },
+		priestCrow2: { rect: {/*priest-crow2*/x:172,y:31,w:12,h:15} },
+		priestCrow3: { rect: {/*priest-crow1*/x:184,y:31,w:12,h:15} },
+		priestWalkRight0: { rect: {/*priest-walk0*/x:200,y:16,w:9,h:15} },
+		priestWalkRight1: { rect: {/*priest-walk1*/x:209,y:0,w:11,h:14} },
+		priestWalkRight2: { rect: {/*priest-walk2*/x:220,y:14,w:8,h:15} },
+		priestWalkRight3: { rect: {/*priest-walk3*/x:215,y:31,w:8,h:16} },
+		priestWalkRight4: { rect: {/*priest-walk4*/x:209,y:14,w:10,h:15} },
+		priestWalkRight5: { rect: {/*priest-walk5*/x:220,y:0,w:10,h:14} },
+		priestWalkRight6: { rect: {/*priest-walk6*/x:223,y:31,w:6,h:15} },
+		priestWalkRight7: { rect: {/*priest-walk7*/x:200,y:0,w:9,h:16} },
+		priestWalkLeft0: { rect: {/*priest-walk0*/x:200,y:16,w:9,h:15},
+			mirror: true },
+		priestWalkLeft1: { rect: {/*priest-walk1*/x:209,y:0,w:11,h:14},
+			mirror: true },
+		priestWalkLeft2: { rect: {/*priest-walk2*/x:220,y:14,w:8,h:15},
+			mirror: true },
+		priestWalkLeft3: { rect: {/*priest-walk3*/x:215,y:31,w:8,h:16},
+			mirror: true },
+		priestWalkLeft4: { rect: {/*priest-walk4*/x:209,y:14,w:10,h:15},
+			mirror: true },
+		priestWalkLeft5: { rect: {/*priest-walk5*/x:220,y:0,w:10,h:14},
+			mirror: true },
+		priestWalkLeft6: { rect: {/*priest-walk6*/x:223,y:31,w:6,h:15},
+			mirror: true },
+		priestWalkLeft7: { rect: {/*priest-walk7*/x:200,y:0,w:9,h:16},
+			mirror: true },
+	},
+	atlas,
+	atlasWidth,
+	resizeTimer,
+	resizing,
+	bg,
+	ctxBg,
+	fg,
+	ctxFg,
+	hud,
+	ctxHud,
+	hudX,
+	hudY,
+	message,
+	ctxMessage,
+	messageWidth,
+	ratio,
+	width,
+	height,
+	centerX,
+	centerY,
+	scaleFactor,
+	mapLeft,
+	mapTop,
+	mapRight,
+	mapBottom,
+	sprites = {},
+	running,
+	now,
+	last,
+	factor,
+	pointerLength = 0,
+	pointerX = [],
+	pointerY = [],
+	gameOver,
+	frameFrequency = 100,
+	seed,
+	objectsLength,
+	objects = [],
+	radiusSeen,
+	radiusCastOut,
+	radiusCollision,
+	boundCollision,
+	playerX,
+	playerY,
+	playerFrame,
+	playerFrameLast,
+	playerAlive,
+	scores,
+	scoreLast,
+	fragmentsLength,
+	fragments = [];
+
+function drawText( ctx, text, x, y )
+{
+	for( var n = 0, l = text.length; n < l; ++n )
+	{
+		var ch = text.substr( n, 1 );
+
+		if( ch == " " )
+		{
+			x += scaleFactor << 2;
+			continue;
+		}
+
+		var sprite = sprites[ch];
+
+		ctx && ctx.drawImage(
+			sprite,
+			x | 0,
+			(y-sprite.height) | 0 );
+
+		x += scaleFactor+sprite.width;
+	}
+
+	return x;
+}
+
+function putText( ctx, text )
+{
+	var y = sprites.a.height;
+
+	ctx.clearRect( 0, 0, width, y );
+	drawText( ctx, text, 0, y );
+}
+
+function drawSprite( sprite, x, y )
+{
+	ctxFg.drawImage(
+		sprite,
+		(x-sprite.centerX) | 0,
+		(y-sprite.centerY) | 0 );
+}
+
+function drawFragments()
+{
+	var pixel = Math.ceil( scaleFactor );
+
+	for( var n = fragmentsLength; n--; )
+	{
+		var f = fragments[n];
+
+		if( f.x < 0 ||
+			f.x > width ||
+			f.y < 0 ||
+			f.y > height )
+			continue;
+
+		f.x += f.vx*factor;
+		f.y += f.vy*factor;
+		f.spin += factor*.06;
+		++f.live;
+
+		var a = 1.005;
+		f.vx *= a;
+		f.vy *= a;
+
+		var sin = Math.sin( f.spin )*scaleFactor*2;
+
+		ctxFg.fillStyle = f.color;
+		ctxFg.fillRect(
+			(f.x+sin*f.vy) | 0,
+			(f.y-sin*f.vx) | 0,
+			pixel,
+			pixel );
+	}
+}
+
+function drawPlayer()
+{
+	var state = "ghost";
+
+	if( now-playerFrameLast > frameFrequency )
+	{
+		++playerFrame;
+		playerFrame %= 6;
+		playerFrameLast = now;
+	}
+
+	ctxFg.globalAlpha = pointerLength ? 1 : .3;
+	drawSprite(
+		sprites[state+playerFrame],
+		playerX,
+		playerY+Math.sin( now*.002 )*scaleFactor );
+	ctxFg.globalAlpha = 1;
+}
+
+function bounce( value, change, min, max )
+{
+	var l = max-min,
+		r;
+
+	if( (r = value-min) < change )
+		value = min-(r % l);
+	else if( (r = value-max) > change )
+		value = max-(r % l);
+
+	return value;
+}
+
+function setFragments()
+{
+	for( var n = fragmentsLength; n--; )
+	{
+		var f = fragments[n],
+			speed = 1+Math.random()*scaleFactor;
+
+		f.x = playerX+f.ox*scaleFactor;
+		f.y = playerY+f.oy*scaleFactor;
+		f.vx = f.ovx*speed;
+		f.vy = f.ovy*speed;
+		f.live = 0;
+	}
+}
+
+function notifyPriests()
+{
+	for( var n = objectsLength; n--; )
+	{
+		var p = objects[n],
+			dx = p.x-playerX,
+			dy = p.y-playerY,
+			d = Math.sqrt( dx*dx + dy*dy );
+
+		p.crow = now+Math.random()*(d/scaleFactor)*10;
+	}
+}
+
+function killPlayer()
+{
+	playerAlive = false;
+	setFragments();
+	notifyPriests();
+
+	setTimeout(
+		function()
+		{
+			gameOver = true;
+
+			var t = "try again!";
+			messageWidth = drawText( null, t, 0, 0 );
+			putText( ctxMessage, t );
+		},
+		1500 );
+}
+
+function drawPriestCrowing( p )
+{
+	if( now-p.lastFrame > frameFrequency )
+	{
+		++p.frame;
+		p.frame %= 4;
+		p.lastFrame = now;
+	}
+
+	drawSprite(
+		sprites["priestCrow"+(p.frame % 4)],
+		p.x,
+		p.y );
+}
+
+function drawPriestWalking( p )
+{
+	for( var n = 0; n < objectsLength; ++n )
+	{
+		var other = objects[n],
+			dx,
+			dy;
+
+		if( other !== p &&
+			(dx = other.x-p.x) < boundCollision &&
+			(dy = other.y-p.y) < boundCollision &&
+			dx*dx + dy*dy < radiusCollision )
+		{
+			p.x += -dx;
+			p.y += -dy;
+			p.vx = -p.vx;
+			p.vy = -p.vy;
+		}
+	}
+
+	var state = "priestWalk"+(p.vx > 0 ? "Right" : "Left");
+
+	p.x += p.vx*factor;
+	p.y += p.vy*factor;
+
+	if( p.x < mapLeft ||
+		p.x > mapRight )
+	{
+		p.x = bounce( p.x, p.vx, mapLeft, mapRight );
+		p.vx = -p.vx;
+	}
+
+	if( p.y < mapTop ||
+		p.y > mapBottom )
+	{
+		p.y = bounce( p.y, p.vy, mapTop, mapBottom );
+		p.vy = -p.vy;
+	}
+
+	var dx = playerX-p.x,
+		dy = playerY-p.y,
+		d = dx*dx + dy*dy;
+
+	if( d < radiusSeen )
+	{
+		if( playerAlive &&
+			(d = Math.sqrt( d )) < radiusCastOut )
+			killPlayer();
+
+		if( pointerLength )
+		{
+			d /= scaleFactor;
+			p.vx = dx/d;
+			p.vy = dy/d;
+		}
+	}
+
+	if( now-p.lastFrame > frameFrequency )
+	{
+		++p.frame;
+		p.frame %= 8;
+		p.lastFrame = now;
+	}
+
+	drawSprite(
+		sprites[state+p.frame],
+		p.x,
+		p.y );
+}
+
+function compareY( a, b )
+{
+	if( a.y > b.y )
+		return 1;
+
+	if( a.y < b.y )
+		return -1;
+
+	return 0;
+}
+
+function drawPriests()
+{
+	objects.sort( compareY );
+
+	for( var n = 0; n < objectsLength; ++n )
+	{
+		var p = objects[n];
+
+		if( p.crow < now )
+			drawPriestCrowing( p );
+		else
+			drawPriestWalking( p );
+	}
+}
+
+function draw()
+{
+	if( resizing )
+		return;
+
+	ctxFg.clearRect( 0, 0, width, height );
+
+	drawPriests();
+
+	if( playerAlive )
+		drawPlayer();
+	else
+	{
+		drawFragments();
+
+		if( gameOver )
+			ctxFg.drawImage(
+				message,
+				centerX-(messageWidth >> 1),
+				centerY );
+	}
+
+	ctxFg.drawImage( hud, hudX, hudY );
+}
+
+function random()
+{
+	// from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
+	return (seed = (seed*9301+49297) % 233280)/233280;
+}
+
+function createPriests()
+{
+	var w = mapRight-mapLeft,
+		h = mapBottom-mapTop,
+		min = Math.min( w, h )*.3;
+
+	for( var n = objectsLength; n--; )
+	{
+		var a = random()*Math.TAU,
+			speed = (.4+random()*.6)*scaleFactor,
+			x,
+			y;
+
+		do
+		{
+			x = mapLeft+random()*w,
+			y = mapTop+random()*h;
+		} while( Math.abs( x-playerX )+Math.abs( y-playerY ) < min );
+
+		objects[n] = {
+			x: x,
+			y: y,
+			vx: Math.cos( a )*speed,
+			vy: Math.sin( a )*speed,
+			crow: now+now,
+			frame: random()*8 | 0,
+			lastFrame: 0 };
+	}
+}
+
+function drawGraves()
+{
+	var ref = sprites.grave0,
+		w = Math.round( ref.width*1.75 ),
+		h = Math.round( ref.height*1.5 ),
+		mw = Math.round( mapRight-mapLeft ),
+		mh = Math.round( mapBottom-mapTop ),
+		gw = (mw/w | 0)*w,
+		gh = (mh/h | 0)*h,
+		px = (mw-gw) >> 1,
+		py = (mh-gh) >> 1,
+		left = mapLeft+px,
+		top = mapTop+py,
+		right = left+gw,
+		bottom = top+gh,
+		n = 0;
+
+	for( var y = top; y < bottom; y += h )
+		for( var x = left; x < right; x += w )
+		{
+			var sprite = sprites["grave"+(++n % 12)];
+
+			ctxBg.drawImage(
+				sprite,
+				(x+((w-sprite.width) >> 1)) | 0,
+				(y+((h-sprite.height) >> 1)) | 0 );
+		}
+}
+
+function drawYard()
+{
+	var size = sprites.yardTopLeft.width,
+		mw = mapRight-mapLeft,
+		mh = mapBottom-mapTop,
+		cols = mw/size | 0,
+		rows = mh/size | 0;
+
+	objectsLength = Math.ceil( Math.sqrt( cols*rows ) );
+}
+
+function drawGround()
+{
+	var sprite = sprites.ground,
+		w = sprite.width,
+		h = sprite.height;
+
+	for( var y = 0; y < height; y += h )
+		for( var x = 0; x < width; x += w )
+			ctxBg.drawImage(
+				sprite,
+				x,
+				y );
+}
+
+function drawBackground()
+{
+	drawGround();
+	drawYard();
+	drawGraves();
+}
+
+function updateScore()
+{
+	putText( ctxHud, ""+scores );
+}
+
+function reset()
+{
+	gameOver = false;
+
+	seed = Math.PI;
+	playerX = centerX;
+	playerY = centerY;
+	playerAlive = true;
+	playerFrameLast = playerFrame = 0;
+	scoreLast = scores = 0;
+
+	drawBackground();
+	createPriests()
+
+	updateScore();
+}
+
+function restart()
+{
+	reset();
+	pointerLength = 0;
+}
+
+function input()
+{
+	if( gameOver &&
+		pointerLength > 0 )
+	{
+		restart();
+		return;
+	}
+
+	for( var n = Math.min( pointerLength, 1 ); n--; )
+	{
+		playerX = pointerX[n];
+
+		if( playerX < mapLeft )
+			playerX = mapLeft;
+		else if( playerX > mapRight )
+			playerX = mapRight;
+
+		playerY = pointerY[n];
+
+		if( playerY < mapTop )
+			playerY = mapTop;
+		else if( playerY > mapBottom )
+			playerY = mapBottom;
+	}
+}
+
+function run()
+{
+	requestAnimFrame( run );
+
+	now = new Date().getTime();
+	factor = (now-last)/16;
+	last = now;
+
+	if( playerAlive &&
+		now-scoreLast > 100 )
+	{
+		++scores;
+		scoreLast = now;
+		updateScore();
+	}
+
+	input();
+	draw();
+}
+
+function setPointers( ev, down )
+{
+	var e = ev || event;
+
+	if( down < 1 )
+	{
+		// process remaining touches
+		if( pointerLength > 0 &&
+			e.touches &&
+			(down = e.touches.length) )
+			return setPointers( e, down );
+
+		pointerLength = 0;
+	}
+	else if( e.touches )
+	{
+		pointerLength = e.touches.length;
+
+		for( var n = 0; n < pointerLength; ++n )
+		{
+			var t = e.touches[n];
+
+			pointerX[n] = t.pageX;
+			pointerY[n] = t.pageY;
+		}
+	}
+	else if( typeof e.clientX !== "undefined" )
+	{
+		pointerX[0] = e.clientX;
+		pointerY[0] = e.clientY;
+		pointerLength = 1;
+	}
+	else if( typeof e.pageX !== "undefined" )
+	{
+		pointerX[0] = e.pageX;
+		pointerY[0] = e.pageY;
+		pointerLength = 1;
+	}
+
+	if( ratio != 1 )
+		for( var n = 0; n < pointerLength; ++n )
+		{
+			pointerX[n] = pointerX[n]*ratio | 0;
+			pointerY[n] = pointerY[n]*ratio | 0;
+		}
+
+	// to avoid overscrolling on iOS it's important to
+	// catch pointer events
+	e.preventDefault();
+	return false;
+}
+
+function pointerUp( ev )
+{
+	return setPointers( ev, 0 );
+}
+
+function pointerMove( ev )
+{
+	return setPointers( ev, pointerLength );
+}
+
+function pointerDown( ev )
+{
+	return setPointers( ev, 1 );
+}
+
+function scaleSprite( res, rect, w, h )
+{
+	var c = document.createElement( "canvas" ),
+		cx = c.getContext( "2d" );
+
+	c.width = w;
+	c.height = h;
+
+	c.centerX = w >> 1;
+	c.centerY = h >> 1;
+
+	var offset = rect.y*(atlasWidth << 2)+(rect.x << 2),
+		skip = (atlasWidth-rect.w) << 2,
+		xs = 0,
+		xf = scaleFactor;
+
+	if( res.mirror )
+	{
+		xf = -xf;
+		xs = (scaleFactor*rect.w+xf) | 0;
+	}
+
+	for( var ay = rect.h, sy = 0;
+		ay--;
+		offset += skip, sy += scaleFactor )
+	{
+		var y = Math.ceil( sy ),
+			h = Math.ceil( sy+scaleFactor )-y;
+
+		for( var ax = rect.w, sx = xs;
+			ax--;
+			sx += xf )
+		{
+			var r = atlas[offset++],
+				g = atlas[offset++],
+				b = atlas[offset++],
+				a = atlas[offset++];
+
+			if( a == 0 )
+				continue;
+
+			var x = Math.ceil( sx );
+
+			cx.fillStyle = 'rgba('+r+','+g+','+b+','+(a/255)+')';
+			cx.fillRect(
+				x,
+				y,
+				Math.ceil( sx+Math.abs( xf ) )-x,
+				h );
+		}
+	}
+
+	return c;
+}
+
+function scale()
+{
+	for( var name in resources )
+	{
+		var res = resources[name],
+			rc = res.rect,
+			w = Math.max( Math.ceil( rc.w*scaleFactor ), 1 ),
+			h = Math.max( Math.ceil( rc.h*scaleFactor ), 1 );
+
+		sprites[name] = scaleSprite( res, rc, w, h );
+	}
+}
+
+function resize()
+{
+	var w = window.innerWidth,
+		h = window.innerHeight;
+
+	width = w*ratio | 0;
+	height = h*ratio | 0;
+
+	bg.width = fg.width = width;
+	bg.height = fg.height = height;
+	bg.style.width = fg.style.width = w+"px";
+	bg.style.height = fg.style.height = h+"px";
+
+	centerX = width >> 1;
+	centerY = height >> 1;
+
+	var mapSize = Math.min( width, height );
+
+	scaleFactor = Math.max(
+		1,
+		mapSize/16/resources.yardTopLeft.rect.w );
+
+	scale();
+
+	hud.width = message.width = width;
+	hud.height = message.height =
+		resources.f.rect.h*scaleFactor | 0;
+
+	hudX = hudY = scaleFactor << 2;
+
+	mapLeft = (width-mapSize) >> 1;
+	mapTop = (height-mapSize) >> 1;
+	mapRight = mapLeft+mapSize;
+	mapBottom = mapTop+mapSize;
+
+	reset();
+
+	radiusSeen = mapSize*.2 | 0;
+	radiusSeen *= radiusSeen;
+	radiusCastOut = sprites.ghost0.width*.5 | 0;
+	radiusCollision = radiusCastOut << 4;
+	boundCollision = Math.sqrt( radiusCastOut )*.5 | 0;
+
+	resizing = false;
+}
+
+function scheduleResize()
+{
+	if( resizeTimer )
+		clearTimeout( resizeTimer );
+
+	if( running )
+		resizing = true;
+
+	resizeTimer = setTimeout( resize, 200 );
+}
+
+function start()
+{
+	var d = document;
+
+	d.onmousedown = pointerDown;
+	d.onmousemove = pointerMove;
+	d.onmouseup = pointerUp;
+	d.onmouseout = pointerUp;
+
+	if( "ontouchstart" in d )
+	{
+		d.ontouchstart = pointerDown;
+		d.ontouchmove = pointerMove;
+		d.ontouchend = pointerUp;
+		d.ontouchleave = pointerUp;
+		d.ontouchcancel = pointerUp;
+	}
+
+	last = new Date().getTime();
+	running = true;
+	run();
+}
+
+function createFragments()
+{
+	var rect = resources.ghost0.rect,
+		w2 = rect.w >> 1,
+		h2 = rect.h >> 1,
+		offset = rect.y*(atlasWidth << 2)+(rect.x << 2),
+		skip = (atlasWidth-rect.w) << 2;
+
+	fragmentsLength = 0;
+
+	for( var y = 0, h = rect.h; y < h; ++y, offset += skip )
+		for( var x = 0, w = rect.w; x < w; ++x )
+		{
+			var r = atlas[offset++],
+				g = atlas[offset++],
+				b = atlas[offset++],
+				a = atlas[offset++];
+
+			if( a == 0 )
+				continue;
+
+			var cx = x-w2,
+				cy = y-h2,
+				alpha = Math.atan2( cy, cx ),
+				vx = Math.cos( alpha ),
+				vy = Math.sin( alpha );
+
+			fragments[fragmentsLength++] = {
+				color: 'rgba('+r+','+g+','+b+','+(a/255)+')',
+				ox: cx,
+				oy: cy,
+				ovx: vx,
+				ovy: vy,
+				spin: Math.random()*Math.TAU };
+		}
+}
+
+function decompressAtlas()
+{
+	var c = document.createElement( "canvas" ),
+		x = c.getContext( "2d" ),
+		w = atlas.width,
+		h = atlas.height;
+
+	c.width = w;
+	c.height = h;
+	x.drawImage( atlas, 0, 0 );
+
+	atlas = x.getImageData( 0, 0, w, h ).data;
+	atlasWidth = w;
+}
+
+function init()
+{
+	if( !atlas.complete ||
+		new Date().getTime()-last < 500 )
+	{
+		// give mobile browsers some time to settle
+		// their window.innerWidth/Height values, i.e.
+		// there may still be the virtual keyboard visible
+		setTimeout( init, 500 );
+		return;
+	}
+
+	decompressAtlas();
+	createFragments();
+
+	resize();
+	window.onresize = scheduleResize;
+
+	document.body.appendChild( bg );
+	document.body.appendChild( fg );
+
+	start();
+}
+
+function createCanvas()
+{
+	if( !(bg = document.createElement( "canvas" )) ||
+		!(ctxBg = bg.getContext( "2d", { alpha: false } )) ||
+		!(fg = document.createElement( "canvas" )) ||
+		!(ctxFg = fg.getContext( "2d" )) ||
+		!(hud = document.createElement( "canvas" )) ||
+		!(ctxHud = hud.getContext( "2d" )) ||
+		!(message = document.createElement( "canvas" )) ||
+		!(ctxMessage = message.getContext( "2d" )) )
+		return false;
+
+	ratio =
+		(window.devicePixelRatio || 1)/
+		(ctxBg.webkitBackingStorePixelRatio ||
+			ctxBg.mozBackingStorePixelRatio ||
+			ctxBg.msBackingStorePixelRatio ||
+			ctxBg.oBackingStorePixelRatio ||
+			ctxBg.backingStorePixelRatio ||
+			1);
+
+	return true;
+}
+
+function load()
+{
+	if( !createCanvas() )
+	{
+		alert( "Sorry, this browser cannot run this game." );
+		return;
+	}
+
+	last = new Date().getTime();
+
+	atlas = new Image();
+	atlas.onload = init;
+	atlas.src = "data:image/png;base64,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";
+}
+
+window.onload = load;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+- **Title** : Pronto
+- **Description** : Simple reaction game. Tap, click or press space to change lanes when it's time.
+- **Author** : Markus Fisch
+- **Website** : https://github.com/markusfisch/
+- **License** : Unlicense license
+- **Source** : https://github.com/markusfisch/Pronto
+- **Last update** : Oct 9, 2020
+- **Modifications** : 
+  - moved "src/*" and "htdocs/*" files to root folder
+  - removed "htdocs" "bin" "src" folders
+  - removed ".gitignore" ".htaccess" "Makefile"
+  - renamed "preview.html" to "index.html"

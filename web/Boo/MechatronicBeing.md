@@ -1,0 +1,14 @@
+- **Title** : Boo!
+- **Description** : You're a ghost trying to hide from the priests that want to free your soul.
+- **Author** : Markus Fisch
+- **Website** : https://github.com/markusfisch/
+- **License** : Unlicense license
+  - **Note** : Despite the absence of file or statement in this repository, the license of this game is "Unlicense", as indicated in the author website (http://www.markusfisch.de/games-casual.html) (checked:2023/06/12)
+- **Source** : https://github.com/markusfisch/Boo
+- **Last update** : Feb 22, 2022
+- **Note** : build scripts (bin/*) are included. They are under "Unlicense" license, as indicated in the author website (http://www.markusfisch.de/tools-shell.html) 
+- **Modifications** : 
+  - moved "htdocs/index.html" "htdocs/icon.png" to root folder
+  - removed "htdocs" folder
+  - removed ".gitignore"
+

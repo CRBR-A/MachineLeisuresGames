@@ -1,0 +1,9 @@
+- **Title** : RTS-2D
+- **Description** : CC0 topdown real-time strategy web game.
+- **Author** : 'iterami' + fork by 'ngzh'
+- **Website** : https://github.com/iterami/
+  - fork by https://github.com/ngzh/
+- **License** : CC0-1.0
+- **Source** : https://github.com/ngzh/RTS-2D.htm
+- **Last update** : Feb 1, 2016
+- **Note** : original https://github.com/iterami/RTS-2D.htm repository is gone. Use the fork by ngzh.

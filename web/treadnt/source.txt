@@ -1,0 +1,10 @@
+﻿- **Title** : Treadn't
+- **Description** : html canvas snake game based on a flag meme
+- **Author** : AgeVitam
+- **Website** : https://github.com/AgeVitam/
+- **License** : CC0 license
+  > "Released under a CC0 license, meaning you can do whatever you want with it."
+- **Source** : https://github.com/AgeVitam/treadnt
+- **Last update** : 2017-03-28
+- **For** : MechatronicBeing
+- **Modifications** : none

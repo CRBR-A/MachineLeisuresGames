@@ -1,0 +1,77 @@
+.music_ed content {
+  min-width: 400px;
+  height: 256px;
+}
+
+.music_ed table {
+  width: 100%;
+}
+
+.music_ed, .music_ed td, .music_ed td div {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 16px;
+}
+
+.music_ed td:first-child {
+  padding-right: 8px;
+  padding-left: 10px;
+  width: 26px;
+}
+
+.music_ed td:nth-child(n+2):nth-child(-n+6) {
+  width: 26px;
+  text-align: center;
+}
+
+.music_ed td div {
+  width: 24px;
+  text-align: center;
+  padding: 0px 2px 0px 2px;
+  border: 1px hsl(201 28% 19% / 1) solid;
+}
+
+/* Rows */
+
+.music_ed tr:nth-child(2n) {
+  background-color: hsl(201 28% 17% / 1);
+}
+
+.music_ed tr.playing {
+  background-color: hsl(199 30% 29% / 1);
+}
+
+/* Play/stop buttons */
+
+.music_ed .play_button,
+.music_ed .stop_button {
+  visibility: hidden;
+  padding-right: 6px;
+}
+
+.music_ed tr.playing .play_button {
+  display: none;
+}
+
+.music_ed tr:not(.playing) .stop_button {
+  display: none;
+}
+
+.music_ed tr:hover .play_button {
+  visibility: visible;
+}
+
+.music_ed tr:hover .stop_button {
+  visibility: visible;
+}
+
+/* Info */
+
+.music_ed info:empty {
+  display: none;
+}
+
+.music_ed info {
+  padding: 0px 2px 0px 2px;
+  margin: 0px 2px 0px 2px;
+  background-color: hsl(199deg 26% 30%);
+}

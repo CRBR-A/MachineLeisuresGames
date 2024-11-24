@@ -1,0 +1,37 @@
+.window.console_ed content {
+  width: 512px;
+  height: 512px;
+}
+
+.window.console_ed div {
+  width: calc(100% - 2px); /* Account for border */
+  height: calc(100% - 30px); /* Account for text input */
+  border: 1px inset grey;
+  overflow-y: scroll;
+}
+
+.window.console_ed div article {
+  font-family: 'Roboto Mono';
+}
+
+.window.console_ed div article:hover {
+  background-color: #2d434d;
+}
+
+.window.console_ed div article.error {
+  color: hsla(0, 88%, 70%, 1);
+}
+
+.window.console_ed div article.error line {
+  color: hsla(0, 88%, 70%, 1);
+  display: block;
+}
+
+.window.console_ed div article.error line:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.window.console_ed input[type=text] {
+  width: 100%;
+}

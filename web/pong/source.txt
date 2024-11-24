@@ -1,0 +1,9 @@
+title: Retro Ping-Pong game
+Description: Javascript porting of retro ping-pong game
+Author: klokt-valg
+Website: https://github.com/klokt-valg
+License: Unlicense 
+Source: https://github.com/klokt-valg/retro-ping-pong-game
+Last-update: May 8, 2019
+Modifications: removed most files
+

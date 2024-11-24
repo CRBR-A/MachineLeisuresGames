@@ -1,0 +1,8 @@
+Title: antitris
+Description: Reverse Tetris - make tetrominos of same color with multicolored lines
+Author: 'Lyatus' (Lou Catonnet)
+Website: https://github.com/Lyatus
+License: Unlicense license
+Source: https://github.com/Lyatus/antitris
+Last-update: Feb 11, 2023
+

@@ -1,0 +1,13 @@
+title: A Valentine's Day one-minute minigame
+url: https://github.com/ncase/door
+author: Nicky Case "ncase"
+license: CC0-1.0
+modifications: 
+  - removed: "js/soundjs-0.6.0.min.js" MIT licensed
+  - removed: "js/popup.js": used for popup to social network at the end
+  - removed "audio": some not public domain + unused since removal of soundjs
+  - removed "icons": used for social network popup
+  - comment: all lines with "createjs" (sounds) in "js/game.js"
+  - removed: the function socialShare in "js/game.js"
+  
+  

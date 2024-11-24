@@ -1,0 +1,42 @@
+.window.sprite_ed content {
+  min-width: 415px;
+  min-height: 350px;
+}
+
+.window.sprite_ed div.panel {
+  float: left;
+}
+
+
+.window.sprite_ed canvas.draw {
+  width: calc(100% - 55px);
+  max-height: 100%;
+}
+
+/* Color selection and edition */
+
+.window.sprite_ed .color_select {
+  column-count: 2;
+  column-gap: 0px;
+}
+
+.window.sprite_ed .color_select input[type=radio] {
+  display: none;
+}
+
+.window.sprite_ed .color_select input[type=color] {
+  display: none;
+}
+
+.window.sprite_ed .color_select input[type=radio] + label {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  text-align: center;
+  border: 2px inset transparent;
+}
+
+.window.sprite_ed .color_select input[type=radio]:checked + label {
+  border-color: lightgrey;
+}

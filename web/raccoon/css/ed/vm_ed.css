@@ -1,0 +1,11 @@
+.window.vm_ed content {
+  min-width: 414px;
+  min-height: 460px;
+}
+
+.window.vm_ed content canvas {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: calc(100% - 27px);
+}

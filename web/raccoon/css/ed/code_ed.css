@@ -1,0 +1,162 @@
+:root {
+  --code_ed_line_numbers_width: 40px;
+}
+
+.window.code_ed content {
+  width: 256px;
+  height: 256px;
+  min-width: 256px;
+}
+
+.window.code_ed textarea,
+.window.code_ed .textmirror,
+.window.code_ed .linenumbers {
+  width: calc(100% - var(--code_ed_line_numbers_width));
+  height: calc(100% - 32px);
+  margin-left: var(--code_ed_line_numbers_width);
+  overflow: auto;
+}
+
+.window.code_ed .linenumbers {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  width: var(--code_ed_line_numbers_width);
+  margin-left: 0px;
+}
+.window.code_ed .linenumbers line {
+  display: block;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.window.code_ed textarea,
+.window.code_ed .linenumbers line,
+.window.code_ed .textmirror,
+.window.code_ed .textmirror line,
+.window.code_ed .textmirror span {
+  font-family: 'Roboto Mono';
+  font-size: 15px;
+  background: none;
+  overflow-wrap: normal;
+  word-break: initial;
+  line-height: 20px;
+}
+
+.window.code_ed textarea {
+  resize: none;
+  color: #00000000;
+  caret-color: white;
+}
+
+.window.code_ed textarea::selection {
+  background-color: hsla(200, 100%, 78%, 0.15);
+  color: #00000000;
+}
+
+.window.code_ed .linenumbers,
+.window.code_ed .textmirror {
+  width: calc(100% - var(--code_ed_line_numbers_width) - 16px);
+  height: calc(100% - 69px);
+  position: absolute;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+.window.code_ed .textmirror line {
+  display: block;
+  margin: 0px;
+  height: 20px;
+}
+
+/* Overlay */
+
+.window.code_ed .textoverlay {
+  z-index: initial;
+  display: none;
+}
+
+.window.code_ed .textoverlay.active {
+  display: block;
+}
+
+.window.code_ed .textoverlay line {
+  color: #00000000;
+}
+
+.window.code_ed .textoverlay .keyword_link {
+  color: #00000000;
+  text-decoration: underline;
+  text-decoration-color: #9eb5b8;
+}
+
+.window.code_ed .textoverlay .keyword_link:hover {
+  cursor: pointer;
+}
+
+/* Syntax highlighting */
+
+.window.code_ed .textmirror .keyword {
+  color: #627aff;
+}
+
+.window.code_ed .textmirror .comment {
+  color: #19d356;
+}
+
+.window.code_ed .textmirror .string {
+  color: #ff6d34;
+}
+
+.window.code_ed .textmirror .number.dec {
+  color: #7cffb3;
+}
+
+.window.code_ed .textmirror .number.hex {
+  color: #a1a14e;
+}
+
+/* Line hightlighting */
+
+@keyframes line_highlight {
+  from {
+    background-color: rgba(83, 108, 163, 0.295);
+  }
+  to {
+    background-color: rgba(83, 108, 163, 0);
+  }
+}
+
+.window.code_ed .textmirror line.highlight {
+  animation-name: line_highlight;
+  animation-duration: 4s;
+  display: block;
+  margin: 0px;
+}
+
+/* Error highlighting */
+
+.window.code_ed .textmirror line.error {
+  background-color: rgba(255, 0, 0, 0.295);
+  display: block;
+  margin: 0px;
+}
+
+.window.code_ed .textmirror line .error_message {
+  margin-left: 16px;
+  color: black;
+}
+
+.window.code_ed .textmirror .error + br {
+  /* Since the error line is made a block, line break after is redundant */
+  display: none;
+}
+
+/* Token count */
+
+.window.code_ed .token_count {
+  display: inline-block;
+  padding: 0px 6px;
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  color: #dbe7eb;
+}

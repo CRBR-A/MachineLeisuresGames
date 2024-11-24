@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head lang="en">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta name="theme-color" content="#0058a5"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="msapplication-navbutton-color" content="#0058a5"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="apple-touch-icon-precomposed" href="icon_ios.png"/>
+<link rel="manifest" href="manifest.json"/>
+<title>Pronto</title>
+<style>
+html, body {
+	margin: 0; padding: 0;
+	background: #ddd;
+	font: 5vw sans-serif; color: #555;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-ms-touch-action: none;
+	user-select: none;
+}
+canvas {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+#Message {
+	position: fixed;
+	width: 100%;
+	padding-top: 20vh;
+	font-weight: bold;
+	text-align: center;
+}
+.Score {
+	font-size: 20vw;
+}
+p {
+	margin: 0; padding: 0;
+}
+</style>
+</head>
+<body>
+<canvas id="Canvas">Sorry, this browser cannot render this content.</canvas>
+<div id="Message"></div>
+<script id="LightVertexShader" type="x-shader/x-vertex">
+attribute vec3 vertex;
+
+uniform mat4 lightProjMat;
+uniform mat4 lightModelViewMat;
+
+void main() {
+	gl_Position = lightProjMat * lightModelViewMat * vec4(vertex, 1.);
+}
+</script>
+<script id="LightFragmentShader" type="x-shader/x-fragment">
+precision mediump float;
+
+void main() {
+	const vec4 bitShift = vec4(16777216., 65536., 256., 1.);
+	const vec4 bitMask = vec4(0., 1. / 256., 1. / 256., 1. / 256.);
+	vec4 comp = fract(gl_FragCoord.z * bitShift);
+	comp -= comp.xxyz * bitMask;
+	gl_FragColor = comp;
+}
+</script>
+<script id="VertexShader" type="x-shader/x-vertex">
+attribute vec3 vertex;
+attribute vec3 normal;
+
+uniform mat4 projMat;
+uniform mat4 modelViewMat;
+uniform mat4 normalMat;
+uniform mat4 lightModelViewMat;
+uniform mat4 lightProjMat;
+uniform vec3 lightDirection;
+
+varying mediump float intensity;
+varying mediump float z;
+varying vec4 shadowPos;
+
+const mat4 texUnitConverter = mat4(
+	.5, .0, .0, .0,
+	.0, .5, .0, .0,
+	.0, .0, .5, .0,
+	.5, .5, .5, 1.
+);
+
+void main() {
+	gl_Position = projMat * modelViewMat * vec4(vertex, 1.);
+	z = gl_Position.z;
+	intensity = max(0., dot(normalize(mat3(normalMat) * normal),
+		lightDirection));
+	shadowPos = texUnitConverter * lightProjMat * lightModelViewMat *
+		vec4(vertex, 1.);
+}
+</script>
+<script id="FragmentShader" type="x-shader/x-fragment">
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+
+uniform float far;
+uniform vec4 sky;
+uniform vec4 color;
+uniform sampler2D shadowDepthTexture;
+
+varying mediump float intensity;
+varying mediump float z;
+varying vec4 shadowPos;
+
+const vec4 bitShift = vec4(1. / 16777216., 1. / 65536., 1. / 256., 1.);
+float decodeFloat(vec4 c) {
+	return dot(c, bitShift);
+}
+
+void main() {
+	float z = shadowPos.z - .007;
+	float texelSize = 1. / 1024.;
+	float light = 0.;
+	for (int x = -1; x <= 1; ++x) {
+		for (int y = -1; y <= 1; ++y) {
+			float texelDepth = decodeFloat(texture2D(shadowDepthTexture,
+					shadowPos.xy + vec2(x, y) * texelSize));
+			if (z < texelDepth) {
+				light += 1.;
+			}
+		}
+	}
+	light /= 9.;
+	light *= intensity;
+	float fog = z / far;
+	gl_FragColor = vec4(
+		(1. - fog) * color.rgb * (.75 + light * .25) + fog * sky.rgb,
+		color.a);
+}
+</script>
+<script src="src.js"></script>
+</body>
+</html>
