@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<title>TapBlock</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width">
+<style>
+html, body {
+    background: white;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+h1 {
+    font-size: 60px;
+    margin: 0 0 20px 0;
+}
+#menu {
+    background: #eed;
+    border-radius: 20px;
+    box-shadow: 0 0 15px black;
+    font-size: 26px;
+    left: 50%;
+    padding: 15px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+label {
+    display: inline-block;
+    padding: 0 2px;
+    text-align: right;
+    width: 80px;
+}
+.config {
+    display: block;
+    margin: 20px 0;
+}
+.config button {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 24px;
+    text-align: center;
+    width: 36px;
+}
+.config span {
+    display: inline-block;
+    font-family: monospace;
+    padding: 0;
+    text-align: center;
+    width: 50px;
+}
+.control {
+    display: inline-block;
+    padding: 0;
+    text-align: left;
+    width: 130px;
+}
+.stats h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.stats {
+    font-size: 18px;
+    margin: 0;
+}
+.stat {
+    font-weight: bold;
+}
+#start {
+    font-size: 40px;
+    margin-top: 30px;
+}
+#gameover {
+    display: none;
+    left: 50%;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.gameover {
+    font-size: 40px;
+    color: white;
+}
+#restart {
+    margin-top: 20px;
+    font-size: 40px;
+}
+#tapout {
+    display: none;
+    color: yellow;
+    font-weight: bold;
+    font-size: 46px;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, -2px, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, -1px, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, -5px, 0);
+    }
+}
+</style>
+<canvas></canvas>
+<div id="menu">
+    <h1>TapBlock</h1>
+    <div class="config" id="width">
+        <label>width:</label>
+        <div class="control">
+            <button>-</button><span>XX</span><button>+</button>
+        </div>
+    </div>
+    <div class="config" id="height">
+        <label>height:</label>
+        <div class="control">
+            <button>-</button><span>XX</span><button>+</button>
+        </div>
+    </div>
+    <div class="config" id="colors">
+        <label>colors:</label>
+        <div class="control">
+            <button>-</button><span>XX</span><button>+</button>
+        </div>
+    </div>
+    <div class="stats">
+        <h2>With these settings…</h2>
+        Games completed / total:
+        <span class="stat" id="stat-games">#</span><br/>
+        Average play time:
+        <span class="stat" id="stat-time">#</span><br/>
+        Best score:
+        <span class="stat" id="stat-best">#</span><br/>
+        Average score:
+        <span class="stat" id="stat-average">#</span><br/>
+    </div>
+    <button id="start">Start</button>
+</div>
+<div id="gameover">
+    <div class="gameover">Game Over</div>
+    <div class="gameover" id="score"></div>
+    <div class="gameover" id="tapout">TAPPED OUT!</div>
+    <button id="restart">Restart</button>
+</div>
+<script src="game.js"></script>

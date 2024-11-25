@@ -1,0 +1,19 @@
+{
+	"name": "Gingerman",
+	"icons": [
+		{
+			"src": "icon_192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "icon_512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "index.html",
+	"background_color": "#2b0e03",
+	"display": "standalone",
+	"theme_color": "#1b0e03"
+}
